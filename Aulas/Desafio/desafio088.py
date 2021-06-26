@@ -21,4 +21,7 @@ for x in range(0, jogos):
                 None
     print(f'Os numeros são: {jogo}')
     jogo.clear()
+
+print('\n-=-=-=-', f'Sorteando {jogos} jogos'.upper().center(24), '-=-=-=-')
+
         
