@@ -10,33 +10,33 @@ def contador(inicio:int, fim:int, passo:int):
         passo += (passo * -2)
         print(f'O inicio é {fim}, o fim é {inicio} e o passo é {passo}')
         for loop in range(fim, (inicio + 1), passo):
-            sleep(0.75)
+            sleep(0.15)
             print(loop, end=' - ')
         print('Fim')
     elif(inicio > fim):
         print(f'O inicio é {inicio}, o fim é {fim} e o passo é {passo}')
         for loop in reversed(range(fim, (inicio + 1), passo)):
-            sleep(0.75)
+            sleep(0.15)
             print(loop, end=' - ')
         print('Fim')
     elif(passo < 0):
         passo += (passo * -2)
         print(f'O inicio é {fim}, o fim é {inicio} e o passo é {passo}')
         for loop in reversed(range(inicio, (fim + 1), passo)):
-            sleep(0.75)
+            sleep(0.15)
             print(loop, end=' - ')
         print('Fim')
     elif(passo == 0):
         passo = 1
         print(f'O inicio é {inicio}, o fim é {fim} e o passo é {passo}')
         for loop in range(inicio, (fim + 1), passo):
-            sleep(0.75)
+            sleep(0.15)
             print(loop, end=' - ')
         print('Fim')
     else:
         print(f'O inicio é {inicio}, o fim é {fim} e o passo é {passo}')
         for loop in range(inicio, (fim + 1), passo):
-            sleep(0.75)
+            sleep(0.15)
             print(loop, end=' - ')
         print('Fim')
 
