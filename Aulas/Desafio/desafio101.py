@@ -15,4 +15,4 @@ def voto(ano:int):
 
 ano = int(input('Qual é o ano que você nasceu?: '))
 
-print(f'O seu voto é {voto(ano)}')
+print(f'O seu voto é {voto(ano)[0]}, pois você tem {voto(ano)[1]} anos')
