@@ -1,5 +1,5 @@
 
-'''Faça um programa que leia um numero inteiro e mostra ne tella o seu sucessor e seu antecessor'''
+# Faça um programa que leia um numero inteiro e mostra ne tella o seu sucessor e seu antecessor 
 
 n = int(input('Numero: '))
 ns = n + 1

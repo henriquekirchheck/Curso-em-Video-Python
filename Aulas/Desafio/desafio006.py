@@ -1,5 +1,5 @@
 
-''' Crie um algoritimo que leia um numero e mostre seu dobro, triplo e raiz quadrada'''
+# Crie um algoritimo que leia um numero e mostre seu dobro, triplo e raiz quadrada
 
 n = int(input('N°: '))
 nd = n * 2

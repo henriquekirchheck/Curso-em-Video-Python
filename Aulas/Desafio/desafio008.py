@@ -1,5 +1,5 @@
 
-''' Escreva um programa que converta metros em centimetros e milimetros '''
+# Escreva um programa que converta metros em centimetros e milimetros 
 
 m = float(input('Metros: '))
 cm = m * 100

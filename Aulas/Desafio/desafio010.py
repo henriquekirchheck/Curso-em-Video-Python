@@ -1,5 +1,5 @@
 
-''' Converter Real em dolar '''
+# Converter Real em dolar
 
 rs = float(input('R$'))
 dol = rs / 3.27

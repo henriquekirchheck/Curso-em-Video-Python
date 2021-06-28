@@ -1,5 +1,5 @@
 
-'''Mostre a tabuada de um numero inteiro'''
+# Mostre a tabuada de um numero inteiro
 
 n = int(input('N°: '))
 n1 = n * 1
