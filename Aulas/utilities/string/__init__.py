@@ -1,4 +1,4 @@
-def line(txt, totalcaracters:int = 0, upper:bool = False):
+def line(txt:str, totalcaracters:int = 0, upper:bool = False):
 
     """
     Makes a line before and after the text you write
@@ -9,13 +9,13 @@ def line(txt, totalcaracters:int = 0, upper:bool = False):
 
     if(totalcaracters < (len(txt) + 2)):
         if(upper == True):
-            text = ('-' * (len(txt) + 2), '\n', txt.upper().center(len(txt) + 2), '\n', '-' * (len(txt) + 2))
+            text = ('{}\n{}\n{}'.format('-' * (len(txt) + 2), txt.upper().center(len(txt) + 2), '-' * (len(txt) + 2)))
         else:    
-            text = ('-' * (len(txt) + 2), '\n', txt.center(len(txt) + 2), '\n', '-' * (len(txt) + 2))
+            text = ('{}\n{}\n{}'.format('-' * (len(txt) + 2), txt.center(len(txt) + 2), '-' * (len(txt) + 2)))
     else:
         if(upper == True):
-            text = ('-' * (totalcaracters), '\n', txt.upper().center(totalcaracters), '\n', '-' * (totalcaracters))
+            text = ('{}\n{}\n{}'.format('-' * totalcaracters), txt.upper().center(totalcaracters), '-' * (totalcaracters))
         else:    
-            text = ('-' * (totalcaracters), '\n', txt.center(totalcaracters), '\n', '-' * (totalcaracters))
+            text = ('{}\n{}\n{}'.format('-' * totalcaracters), txt.center(totalcaracters), '-' * (totalcaracters))
     
     return text
