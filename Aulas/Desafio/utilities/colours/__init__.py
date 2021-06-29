@@ -38,7 +38,7 @@ dicionary = {
 
 }
 
-def color(style = 'null', text = 'null', back = 'null'):
+def colour(style = 'null', text = 'null', back = 'null'):
     """
     Will change the colour of the text and of the background, and even change the style of the letter
     :param style: Changes the style ({'clear' : 'Get everithing to normal'}, 'bold', 'underline', 'negative')
