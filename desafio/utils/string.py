@@ -20,4 +20,4 @@ def line(txt:str, totalcaracters:int = 0, upper:bool = False):
         else:    
             text = ('{} \n{} \n{}'.format('-' * totalcaracters), txt.center(totalcaracters), '-' * (totalcaracters))
     
-    return text
+    print(text)
