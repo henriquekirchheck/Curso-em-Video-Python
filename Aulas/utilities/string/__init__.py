@@ -6,22 +6,16 @@ def line(txt, totalcaracters:int = 0, upper:bool = False):
     :param totalcaracters: The number of caracters that it will be ocuping (Default = 0)
     :param upper: If the caracters will be on upper case
     """
-    
+
     if(totalcaracters < (len(txt) + 2)):
         if(upper == True):
-            print('-' * (len(txt) + 2))
-            print(txt.upper().center(len(txt) + 2))
-            print('-' * (len(txt) + 2))
+            text = ('-' * (len(txt) + 2), '\n', txt.upper().center(len(txt) + 2), '\n', '-' * (len(txt) + 2))
         else:    
-            print('-' * (len(txt) + 2))
-            print(txt.center(len(txt) + 2))
-            print('-' * (len(txt) + 2))
+            text = ('-' * (len(txt) + 2), '\n', txt.center(len(txt) + 2), '\n', '-' * (len(txt) + 2))
     else:
         if(upper == True):
-            print('-' * (totalcaracters))
-            print(txt.upper().center(totalcaracters))
-            print('-' * (totalcaracters))
+            text = ('-' * (totalcaracters), '\n', txt.upper().center(totalcaracters), '\n', '-' * (totalcaracters))
         else:    
-            print('-' * (totalcaracters))
-            print(txt.center(totalcaracters))
-            print('-' * (totalcaracters))
+            text = ('-' * (totalcaracters), '\n', txt.center(totalcaracters), '\n', '-' * (totalcaracters))
+    
+    return text
