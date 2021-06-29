@@ -39,6 +39,13 @@ dicionary = {
 }
 
 def color(style = 'null', text = 'null', back = 'null'):
+    """
+    Will change the colour of the text and of the background, and even change the style of the letter
+    :param style: Changes the style ({'clear' : 'Get everithing to normal'}, 'bold', 'underline', 'negative')
+    :param text: Changes the colour of the text ('black', 'red', 'green', 'yellow', 'blue', 'purple', 'cyan', 'gray', 'white')
+    :param back: Changes the colour of the background ('black', 'red', 'green', 'yellow', 'blue', 'purple', 'cyan', 'gray', 'white')
+    :return: The code that changes to the respective colour
+    """
 
     if(style == 'clear'):
         return ('\x1b[m')
