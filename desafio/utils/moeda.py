@@ -65,7 +65,12 @@ def diminuir(valor:float, porcentagem:int, formatado:bool = False):
 
     return valor
 
-def resumo(valor:float, redução:int = 0, aumento:int = 0):
+def resumo(valor, redução:int = 0, aumento:int = 0):
+
+    if(type(valor) == str):
+        valor = valor.replace(',', '.')
+        valor = float(valor)
+
     from utils.string import line
     
     line('Resumo do valor', totalcaracters=30, upper=True)
