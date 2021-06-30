@@ -14,10 +14,8 @@ def line(txt:str, totalcaracters:int = 0, upper:bool = False):
             text = ('{} \n{} \n{}'.format('-' * (len(txt) + 2), txt.center(len(txt) + 2), '-' * (len(txt) + 2)))
     else:
         if(upper == True):
-            text = ('''{}
-            {}
-            {}'''.format('-' * totalcaracters), txt.upper().center(totalcaracters), '-' * (totalcaracters))
+            text = ('{} \n{} \n{}'.format('-' * totalcaracters, txt.upper().center(totalcaracters), '-' * (totalcaracters)))
         else:    
-            text = ('{} \n{} \n{}'.format('-' * totalcaracters), txt.center(totalcaracters), '-' * (totalcaracters))
+            text = ('{} \n{} \n{}'.format('-' * totalcaracters, txt.center(totalcaracters), '-' * (totalcaracters)))
     
     print(text)

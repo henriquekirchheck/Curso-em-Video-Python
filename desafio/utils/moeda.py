@@ -1,4 +1,4 @@
-def metade(valor:int, formatado:bool = False):
+def metade(valor:float, formatado:bool = False):
     """
     Retorna a metade do valor que você botou
     :param valor: o valor que você quer a metade
@@ -13,7 +13,7 @@ def metade(valor:int, formatado:bool = False):
 
     return valor
 
-def dobro(valor:int, formatado:bool = False):
+def dobro(valor:float, formatado:bool = False):
     """
     Retorna o dobro do valor que você botou
     :param valor: o valor que você quer o dobro
@@ -28,7 +28,7 @@ def dobro(valor:int, formatado:bool = False):
 
     return valor
 
-def aumentar(valor:int, porcentagem:int, formatado:bool = False):
+def aumentar(valor:float, porcentagem:int, formatado:bool = False):
     """
     Retorna o valor que você colocou com a porcentagem de aumento
     :param valor: O valor que você quer aumentar uma porcentagem
@@ -47,7 +47,7 @@ def aumentar(valor:int, porcentagem:int, formatado:bool = False):
 
     return valor
 
-def diminuir(valor:int, porcentagem:int, formatado:bool = False):
+def diminuir(valor:float, porcentagem:int, formatado:bool = False):
     """
     Retorna o valor que você colocou com a porcentagem de diminuição
     :param valor: O valor que você quer diminuir uma porcentagem
@@ -64,3 +64,37 @@ def diminuir(valor:int, porcentagem:int, formatado:bool = False):
         valor = valorformatado.replace('.', ',')
 
     return valor
+
+def resumo(valor:float, redução:int = 0, aumento:int = 0):
+    from utils.string import line
+    
+    line('Resumo do valor', totalcaracters=30, upper=True)
+
+    valorformatado = ('{:.2f}'.format(valor))
+    valorformatado = valorformatado.replace('.', ',')
+
+    valordobro = ('{:.2f}'.format(dobro(valor)))
+    valordobro = valordobro.replace('.', ',')
+    
+    valormetade = ('{:.2f}'.format(metade(valor)))
+    valormetade = valormetade.replace('.', ',')
+
+    valorredução = ('{:.2f}'.format(diminuir(valor, redução)))
+    valorredução = valorredução.replace('.', ',')
+
+    valoraumento = ('{:.2f}'.format(aumentar(valor, aumento)))
+    valoraumento = valoraumento.replace('.', ',')
+    
+    print(f'Preço analizado:'.ljust(16), 'R$'.rjust(3), valorformatado.ljust(9))
+    print(f'Dobro do preço:'.ljust(16), 'R$'.rjust(3), valordobro.ljust(9))
+    print(f'Metade do preço:'.ljust(16), 'R$'.rjust(3), valormetade.ljust(9))
+
+    if((redução and aumento) != 0):
+        print(f'{redução}% de redução:'.ljust(16), 'R$'.rjust(3), valorredução.ljust(9))
+        print(f'{aumento}% de aumento:'.ljust(16), 'R$'.rjust(3), valoraumento.ljust(9))
+    elif(redução != 0):
+        print(f'{redução}% de redução:'.ljust(16), 'R$'.rjust(3), valorredução.ljust(9))
+    elif(aumento != 0):
+        print(f'{aumento}% de aumento:'.ljust(16), 'R$'.rjust(3), valoraumento.ljust(9))
+
+    print('-' * 30)
