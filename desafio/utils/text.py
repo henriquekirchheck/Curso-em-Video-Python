@@ -1,3 +1,6 @@
+from ssl import OP_NO_RENEGOTIATION
+
+
 def createFile(path:str):
     try:
         if(path.find('.txt') == -1):
@@ -64,6 +67,22 @@ def removeTextfromFile(path:str):
             print('O arquivo já esta vazio')
     except:
         print('Esse arquivo não existe')
+
+def recreateFile(lista:list, path:str):
+    novalista = list()
+    if(path.find('.txt') == -1):
+        path = f'{path}.txt'
+    try:
+        for x in lista:
+            y = f'{x}\n'
+            novalista.append(y)
+
+
+        arquivo = open(path, 'w')
+        arquivo.writelines(novalista)
+        arquivo.close()
+    except:
+        print('Ocorreu um erro, provavelmente o arquivo não existe')
 
 
 if __name__ == '__main__':

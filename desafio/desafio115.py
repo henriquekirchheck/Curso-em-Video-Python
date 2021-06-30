@@ -39,14 +39,12 @@ while True:
         conteudo = text.readFile(directory)
         if(conteudo != []):
             for x, y in enumerate(conteudo):
-                lista = y.split()
+                lista = y.split(',')
 
-                for a, b in enumerate(lista):
-                    if(a == 0):
-                        l = b.split(sep='_')
-                        fnome = ' '.join(l)
-
-                print('{} - {} {} anos'.format(str(x).center(3), fnome.ljust(44), lista[1].rjust(3)))
+                if(lista[3] == 'x'):
+                    None
+                else:
+                    print('{} - {} {} anos'.format(lista[0].rjust(7), lista[1].ljust(37), lista[2].rjust(3)))
         else:
             print('{}Não há pessoas cadastradas{}'.format(colours.colour('null', 'red', ret=True), colours.colour(ret=True)))
     elif(option == 2):
@@ -55,8 +53,6 @@ while True:
         except KeyboardInterrupt:
             print('{}O usuario decidiu parar o processo{}'.format(colours.colour('null', 'red', ret=True), colours.colour(ret=True)))
             nome = ''
-        else:
-            nome = '_'.join(nome.split())
 
         while True:
             if(nome != ''):
@@ -73,7 +69,16 @@ while True:
             else:
                 break
         if(nome != ''):
-            pessoa = f'{nome} {idade}'
+            try:
+                conteudo = text.readFile(directory)
+                if(conteudo != []):
+                    lista = conteudo[-1].split(',')
+                    newindex = (int(lista[0]) + 1)
+                else:
+                    newindex = 0
+            except:
+                newindex = 0
+            pessoa = f'{newindex},{nome},{idade},z'
             text.addLinetoFile(pessoa, directory)
     elif(option == 3):
         while True:
@@ -89,7 +94,20 @@ while True:
                 break
         
         if(n != ''):
-            text.removeLinefromFile(n, directory)
+            conteudo = text.readFile(directory)
+            if(conteudo != []):
+                novalista = list()
+                for x in conteudo:
+                    lista = x.split(',')
+
+                    if(lista[0] == str(n)):
+                        lista[3] = 'x'
+                        novalista.append(','.join(lista))
+                    else:
+                        novalista.append(','.join(lista))
+
+                text.recreateFile(novalista, directory)
+
     elif(option == 4):
         while True:
             try:
