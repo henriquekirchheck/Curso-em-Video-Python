@@ -1,4 +1,4 @@
-def colour(style = 'clear', text = 'white', back = 'black'):
+def colour(style = 'clear', text = 'white', back = 'black', ret:bool = False):
     """
     Will change the colour of the text and of the background, and even change the style of the letter
     :param style: Changes the style ({'clear' : 'Get everithing to normal'}, 'bold', 'underline', 'negative')
@@ -47,12 +47,18 @@ def colour(style = 'clear', text = 'white', back = 'black'):
     }
 
     if(style == 'clear'):
-        print('\x1b[m', end='')
+        if(ret == False):
+            print('\x1b[m', end='')
+        else:
+            return('\x1b[m')
     else:
         defstyle = dicionary['style'][style]
         deftext = dicionary['text'][text]
         defback = dicionary['back'][back]
 
-        print(f'\x1b[{defstyle};{deftext};{defback}m', end='')
+        if(ret == False):
+            print(f'\x1b[{defstyle};{deftext};{defback}m', end='')
+        else:
+            return (f'\x1b[{defstyle};{deftext};{defback}m')
 
 
